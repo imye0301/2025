@@ -20,6 +20,7 @@ st.markdown("""
         color: white;
         border-radius: 10px;
         padding: 0.6em 1.2em;
+        margin: 5px;
         font-size: 16px;
         font-weight: bold;
         transition: all 0.3s ease;
@@ -43,13 +44,6 @@ st.title("👗 체형별 옷 코디 추천 웹앱")
 st.markdown(
     "<p style='color:#424242; font-size:18px;'>내 체형에 꼭 맞는 코디 팁과 오늘의 랜덤 추천을 확인하세요 ✨</p>",
     unsafe_allow_html=True
-)
-
-# 사이드바에서 체형 선택
-st.sidebar.header("체형을 선택하세요")
-body_shape = st.sidebar.selectbox(
-    "체형",
-    ["사과형 🍎", "배형 🍐", "직사각형 ▭", "모래시계형 ⏳", "역삼각형 🔺"]
 )
 
 # 체형별 추천 데이터
@@ -125,13 +119,23 @@ recommendations = {
     }
 }
 
-# 선택된 체형 설명
-st.subheader(f"{body_shape} 스타일링 팁 ✨")
-st.markdown(recommendations[body_shape]["tip"])
+# ✅ 버튼으로 체형 선택
+st.subheader("체형을 선택하세요")
+cols = st.columns(5)
+body_shape = None
+shapes = list(recommendations.keys())
 
-# 오늘의 코디 버튼
-st.subheader("👗 오늘의 코디 추천")
-if st.button(f"{body_shape} 오늘의 코디 뽑기 🎲"):
-    outfit = random.choice(recommendations[body_shape]["items"])
-    st.success(f"오늘의 코디는 👉 {outfit['name']}")
-    st.image(outfit["image"], caption="오늘의 코디 예시", use_column_width=True)
+for i, col in enumerate(cols):
+    if col.button(shapes[i]):
+        body_shape = shapes[i]
+
+# 선택된 체형 있을 때만 표시
+if body_shape:
+    st.subheader(f"{body_shape} 스타일링 팁 ✨")
+    st.markdown(recommendations[body_shape]["tip"])
+
+    st.subheader("👗 오늘의 코디 추천")
+    if st.button(f"{body_shape} 오늘의 코디 뽑기 🎲"):
+        outfit = random.choice(recommendations[body_shape]["items"])
+        st.success(f"오늘의 코디는 👉 {outfit['name']}")
+        st.image(outfit["image"], caption="오늘의 코디 예시", use_column_width=True)
