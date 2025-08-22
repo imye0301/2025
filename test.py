@@ -71,7 +71,7 @@ recommendations = {
         """,
         "items": [
             {"name": "심플한 블라우스 + 와이드 팬츠", 
-             "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMThfMjY0%2FMDAxNjk3NjI4MDYzMjU4.4Ydob4B7EPft_afcFWS7AaLLIDm53wZopD9m1FIDNeQg.lsyfaPmNW0SCGYLyU2BmW1-8N0LOJN01glJbsoT3Cz0g.JPEG.haeroo93%2FIMG_6456.jpg&type=a340"},
+             "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA3MjFfMjA4%2FMDAxNjg5OTE5MTMyNTg5.qbrws0rxWYJu5HW_tHhgiJM7tjqiQdFH7KDJh_gDzAgg.4YJVqMaIqcixlR6CDsA5bU6WwEBh5glAdnbrcL06e6Ug.PNG.fmmn3125%2F5.png&type=a340"},
             {"name": "베이직 셔츠 + 플레어 스커트", 
              "image": "https://images.unsplash.com/photo-1520975960476-31c93cc2f3f1?auto=format&fit=crop&w=500&q=80"}
         ]
