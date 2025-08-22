@@ -3,48 +3,7 @@ import random
 
 st.set_page_config(page_title="체형별 코디 추천", page_icon="👗", layout="wide")
 
-# 🎨 CSS 스타일 적용
-st.markdown("""
-    <style>
-    [data-testid="stAppViewContainer"] {
-        background-color: #E3F2FD; /* 연한 파랑 배경 */
-    }
-    [data-testid="stSidebar"] {
-        background-color: #BBDEFB; /* 사이드바 연한 블루 */
-    }
-    h1, h2, h3 {
-        color: #0D47A1;
-    }
-    .stButton>button {
-        background: linear-gradient(to right, #42A5F5, #1E88E5);
-        color: white;
-        border-radius: 10px;
-        padding: 0.6em 1.2em;
-        margin: 5px;
-        font-size: 16px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-    }
-    .stButton>button:hover {
-        background: linear-gradient(to right, #64B5F6, #1976D2);
-        transform: scale(1.05);
-    }
-    .stSuccess {
-        background-color: #BBDEFB;
-        color: #0D47A1;
-        border-radius: 10px;
-        padding: 10px;
-        font-weight: bold;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-# 제목
 st.title("👗 체형별 옷 코디 추천 웹앱")
-st.markdown(
-    "<p style='color:#424242; font-size:18px;'>내 체형에 꼭 맞는 코디 팁과 오늘의 랜덤 추천을 확인하세요 ✨</p>",
-    unsafe_allow_html=True
-)
 
 # 체형별 추천 데이터
 recommendations = {
@@ -137,5 +96,11 @@ if body_shape:
     st.subheader("👗 오늘의 코디 추천")
     if st.button(f"{body_shape} 오늘의 코디 뽑기 🎲"):
         outfit = random.choice(recommendations[body_shape]["items"])
-        st.success(f"오늘의 코디는 👉 {outfit['name']}")
-        st.image(outfit["image"], caption="오늘의 코디 예시", use_column_width=True)
+        st.success(f"오늘의 추천 코디 👉 {outfit['name']}")
+
+        # 모든 코디 보여주기
+        for item in recommendations[body_shape]["items"]:
+            if item["name"] == outfit["name"]:
+                st.image(item["image"], caption=f"⭐ {item['name']} (추천)", use_column_width=True)
+            else:
+                st.image(item["image"], caption=item["name"], use_column_width=True)
