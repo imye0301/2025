@@ -127,7 +127,7 @@ for icon, (text, brands) in items.items():
 
 # 예시 이미지 출력 (임시 예시 URL)
 if choice == "사과형 🍎 (상체가 발달한 체형)":
-    st.image("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTA2MTlfMjkg%2FMDAxNzUwMjcxMTA3ODQ1.vYIfTu2Ky-Pg_KHU-PV7rIPHWtZP_kfhSkBwzxL0mMwg.zQ6whAtGJeFsBrXq5vPuw3cqNSrZAMCsGi64gyKgFYQg.JPEG%2F%25B3%25D7%25C0%25CC%25BA%25F1%252B%25C8%25AD%25C0%25CC%25C6%25AE.jpg&type=a340", caption="사과형 코디 예시", use_container_width=True)
+    st.image("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20140205_101%2F6428guin_13916012009702d5h3_JPEG%2Fnaver_com_20140205_202738.jpg&type=sc960_832", caption="사과형 코디 예시", use_container_width=True)
 elif choice == "배형 🍐 (하체가 발달한 체형)":
     st.image("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTA2MTlfMjA0%2FMDAxNzUwMzE3NDA4MDA3.Kc5YmuzR19ZvCGrupXIEDYul-8Km-bYP9TbU-3RzazQg.GBofArdG3HgAQqF-Q1Bjv8V5IJvOYNI11cuIHP1z6Qwg.JPEG%2Fasdasdasdas.jpg&type=sc960_832", caption="배형 코디 예시", use_container_width=True)
 elif choice == "직사각형 ▭ (허리라인이 잘 안 보이는 체형)":
