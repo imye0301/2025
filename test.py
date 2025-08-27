@@ -133,7 +133,7 @@ elif choice == "배형 🍐 (하체가 발달한 체형)":
 elif choice == "직사각형 ▭ (허리라인이 잘 안 보이는 체형)":
     st.image("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTA1MDNfMjY1%2FMDAxNzQ2Mjc3MDgzODMz.Oz-UPyyvA5MlZRY_UpE2RnkJmXGbO13O0ko3ixL8GEog.OfyCGITNBqW1fzuXrfipucwbibdDF2fpnkzN2tX_3Tgg.JPEG%2F1746268796777.jpg&type=sc960_832", caption="직사각형 코디 예시", use_container_width=True)
 elif choice == "모래시계형 ⏳ (균형잡힌 체형)":
-    st.image("https://i.imgur.com/CSv0Wdo.jpg", caption="모래시계형 코디 예시", use_container_width=True)
+    st.image("https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi3.codibook.net%2Ffiles%2F1979030444474%2F73981c75fb35dbcf%2F380362269.jpg&type=sc960_832", caption="모래시계형 코디 예시", use_container_width=True)
 elif choice == "역삼각형 🔻 (어깨가 넓은 체형)":
     st.image("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150409_84%2Fmusecloset_1428542926799iHJBE_JPEG%2F2d80d08aa418d046ba1c7a58899ec44f.jpg&type=sc960_832", caption="역삼각형 코디 예시", use_container_width=True)
 
