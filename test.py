@@ -37,7 +37,7 @@ if choice == "사과형 🍎 (상체가 발달한 체형)":
 elif choice == "배형 🍐 (하체가 발달한 체형)":
     st.image("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTA2MTlfNDAg%2FMDAxNzUwMzIxMzQ1MDAy.ffNp8BDxomNCi2E0w46n3aemHhDZ2JuAbUwefMAkwKcg.4NUaOuW6yIJPGY8oOR_kPgqrThNn_q3ybRftMmO4Wckg.JPEG%2F%25C7%25CF%25C3%25BC%25BA%25F1%25B8%25B8%25C4%25DA%25B5%25F0.jpg&type=a340//ihttps.imgur.com/sbVVQox.jpg", caption="배형 코디 예시", use_container_width=True)
 elif choice == "직사각형 ▭ (허리라인이 잘 안 보이는 체형)":
-    st.image("https://i.imgur.com/EDuOy1c.jpg", caption="직사각형 코디 예시", use_container_width=True)
+    st.image("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTA1MDNfMjY1%2FMDAxNzQ2Mjc3MDgzODMz.Oz-UPyyvA5MlZRY_UpE2RnkJmXGbO13O0ko3ixL8GEog.OfyCGITNBqW1fzuXrfipucwbibdDF2fpnkzN2tX_3Tgg.JPEG%2F1746268796777.jpg&type=sc960_832", caption="직사각형 코디 예시", use_container_width=True)
 elif choice == "모래시계형 ⏳ (균형잡힌 체형)":
     st.image("https://i.imgur.com/CSv0Wdo.jpg", caption="모래시계형 코디 예시", use_container_width=True)
 elif choice == "역삼각형 🔻 (어깨가 넓은 체형)":
