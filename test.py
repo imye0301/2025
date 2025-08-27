@@ -41,6 +41,6 @@ elif choice == "직사각형 ▭ (허리라인이 잘 안 보이는 체형)":
 elif choice == "모래시계형 ⏳ (균형잡힌 체형)":
     st.image("https://i.imgur.com/CSv0Wdo.jpg", caption="모래시계형 코디 예시", use_container_width=True)
 elif choice == "역삼각형 🔻 (어깨가 넓은 체형)":
-    st.image("https://i.imgur.com/qwB8Zm6.jpg", caption="역삼각형 코디 예시", use_container_width=True)
+    st.image("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150409_84%2Fmusecloset_1428542926799iHJBE_JPEG%2F2d80d08aa418d046ba1c7a58899ec44f.jpg&type=sc960_832", caption="역삼각형 코디 예시", use_container_width=True)
 
 st.success("체형에 맞는 코디로 자신감을 표현해보세요! ✨")
