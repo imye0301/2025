@@ -33,7 +33,7 @@ st.info(tips[choice])
 
 # 예시 이미지 출력 (임시 예시 URL)
 if choice == "사과형 🍎 (상체가 발달한 체형)":
-    st.image("https://i.imgur.com/3dM0t7M.jpg", caption="사과형 코디 예시", use_container_width=True)
+    st.image("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTA2MTlfMjkg%2FMDAxNzUwMjcxMTA3ODQ1.vYIfTu2Ky-Pg_KHU-PV7rIPHWtZP_kfhSkBwzxL0mMwg.zQ6whAtGJeFsBrXq5vPuw3cqNSrZAMCsGi64gyKgFYQg.JPEG%2F%25B3%25D7%25C0%25CC%25BA%25F1%252B%25C8%25AD%25C0%25CC%25C6%25AE.jpg&type=a340", caption="사과형 코디 예시", use_container_width=True)
 elif choice == "배형 🍐 (하체가 발달한 체형)":
     st.image("https://i.imgur.com/sbVVQox.jpg", caption="배형 코디 예시", use_container_width=True)
 elif choice == "직사각형 ▭ (허리라인이 잘 안 보이는 체형)":
