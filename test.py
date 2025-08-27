@@ -1,123 +1,46 @@
 import streamlit as st
-import random
 
-st.set_page_config(page_title="여성 체형별 코디 추천", page_icon="👗", layout="wide")
+# 페이지 기본 설정
+st.set_page_config(page_title="체형별 옷 코디 가이드", layout="centered")
 
-# 헤더
-st.markdown(
-    """
-    <h1 style='text-align: center; color: #D81B60;'>✨ 여성 체형별 옷 코디 추천 ✨</h1>
-    <p style='text-align: center; font-size:18px; color: #616161;'>
-    나의 체형에 꼭 맞는 코디로 더 세련되고 아름답게 스타일링 해보세요!
-    </p>
-    """,
-    unsafe_allow_html=True
-)
+# 제목
+st.title("👗 체형별 옷 코디 가이드")
+st.write("당신의 체형에 맞는 패션 코디 팁을 확인해보세요!")
 
-# 체형 선택
-st.sidebar.header("체형을 선택하세요")
-body_shape = st.sidebar.radio(
-    "체형 선택",
-    ["🍎 사과형", "🍐 배형", "▭ 직사각형", "⏳ 모래시계형", "🔺 역삼각형"]
-)
+# 체형 선택 옵션
+types = [
+    "사과형 🍎 (상체가 발달한 체형)",
+    "배형 🍐 (하체가 발달한 체형)",
+    "직사각형 ▭ (허리라인이 잘 안 보이는 체형)",
+    "모래시계형 ⏳ (균형잡힌 체형)",
+    "역삼각형 🔻 (어깨가 넓은 체형)"
+]
 
-# 체형별 추천 데이터 (실제 예시 이미지)
-recommendations = {
-    "🍎 사과형": {
-        "tip": """
-        - 상체, 특히 복부와 가슴이 발달한 체형이에요.  
-        - **허리를 잘록하게 보이게 하는 브이넥/랩 스타일**이 잘 어울려요.  
-        - 하체는 A라인 스커트, 와이드 팬츠로 시선을 분산시키면 더욱 세련돼 보여요.
-        """,
-        "items": [
-            {
-                "name": "랩 스타일 원피스",
-                "image": "https://40plusstyle.com/wp-content/uploads/2020/08/Apple-body-shape-outfit-ideas.jpg"
-            },
-            {
-                "name": "브이넥 블라우스 + A라인 스커트",
-                "image": "https://raisinglobal.com/cdn/shop/articles/apple_body_shape_outfits.jpg"
-            }
-        ]
-    },
-    "🍐 배형": {
-        "tip": """
-        - 골반과 허벅지가 발달한 체형이에요.  
-        - **상체에 시선을 모으는 오프숄더, 퍼프소매, 밝은 톤 상의**가 잘 어울려요.  
-        - 하체는 어두운 톤의 일자핏 팬츠나 플레어 스커트를 추천해요.
-        """,
-        "items": [
-            {
-                "name": "화이트 오프숄더 블라우스 + 블랙 플레어 스커트",
-                "image": "https://ericaballstyle.com/wp-content/uploads/2022/04/pear-shaped-outfits.jpg"
-            },
-            {
-                "name": "퍼프소매 블라우스 + 딥톤 팬츠",
-                "image": "https://i0.wp.com/www.collegefashion.net/wp-content/uploads/2021/07/outfits-for-pear-body-shape.jpg"
-            }
-        ]
-    },
-    "▭ 직사각형": {
-        "tip": """
-        - 허리선이 잘 드러나지 않는 체형이에요.  
-        - **벨트, 랩 원피스, 크롭 상의 + 하이웨스트** 조합이 체형을 보완해줘요.  
-        """,
-        "items": [
-            {
-                "name": "벨트 장식 랩 원피스",
-                "image": "https://40plusstyle.com/wp-content/uploads/2018/04/Rectangle-body-shape-dresses.jpg"
-            },
-            {
-                "name": "크롭 니트 + 하이웨스트 팬츠",
-                "image": "https://i.pinimg.com/564x/f6/dc/20/f6dc20.jpg"
-            }
-        ]
-    },
-    "⏳ 모래시계형": {
-        "tip": """
-        - 상체와 하체가 균형 잡힌 체형이에요.  
-        - **허리를 강조하는 코디**가 잘 어울려요.  
-        - 슬림핏 드레스, 하이웨스트 스커트, 크롭 자켓을 추천합니다.  
-        """,
-        "items": [
-            {
-                "name": "슬림핏 니트 원피스",
-                "image": "https://40plusstyle.com/wp-content/uploads/2018/04/hourglass-body-shape-dresses.jpg"
-            },
-            {
-                "name": "하이웨스트 스커트 + 크롭 자켓",
-                "image": "https://i.pinimg.com/564x/45/4d/aa/454daa.jpg"
-            }
-        ]
-    },
-    "🔺 역삼각형": {
-        "tip": """
-        - 어깨가 넓고 상체가 발달한 체형이에요.  
-        - **하체를 강조하고 상체는 심플하게** 코디하는 것이 좋아요.  
-        - 와이드 팬츠, 플레어 스커트와 잘 어울립니다.
-        """,
-        "items": [
-            {
-                "name": "심플 블라우스 + 플레어 스커트",
-                "image": "https://40plusstyle.com/wp-content/uploads/2021/05/inverted-triangle-body-shape-outfits.jpg"
-            },
-            {
-                "name": "베이직 셔츠 + 와이드 팬츠",
-                "image": "https://i.pinimg.com/564x/d2/d8/ff/d2d8ff.jpg"
-            }
-        ]
-    }
+choice = st.selectbox("당신의 체형을 선택하세요:", types)
+
+# 체형별 코디 추천 데이터
+tips = {
+    "사과형 🍎 (상체가 발달한 체형)": "상체는 심플하게, 하체에 포인트를 주는 것이 좋아요. A라인 스커트, 와이드 팬츠 추천!",
+    "배형 🍐 (하체가 발달한 체형)": "밝은 톤 상의 + 어두운 톤 하의로 시선을 위로 끌어올리세요. 화려한 액세서리도 효과적!",
+    "직사각형 ▭ (허리라인이 잘 안 보이는 체형)": "허리를 강조하는 벨트, 하이웨이스트 팬츠, 크롭탑 스타일링 추천!",
+    "모래시계형 ⏳ (균형잡힌 체형)": "몸의 라인을 살려주는 원피스, 슬림핏 의상이 잘 어울립니다. 대부분의 스타일 소화 가능!",
+    "역삼각형 🔻 (어깨가 넓은 체형)": "브이넥 상의로 어깨를 좁아보이게, 플레어 스커트나 부츠컷 바지로 하체 볼륨감을 주세요."
 }
 
-# 선택된 체형 팁 출력
-st.markdown(f"### {body_shape} 스타일링 팁 💡")
-st.markdown(recommendations[body_shape]["tip"])
+# 결과 출력
+st.subheader("추천 코디")
+st.info(tips[choice])
 
-# 오늘의 코디 버튼
-st.markdown("---")
-st.markdown("## 👗 오늘의 코디 추천")
+# 예시 이미지 출력 (임시 예시 URL)
+if choice == "사과형 🍎 (상체가 발달한 체형)":
+    st.image("https://i.imgur.com/3dM0t7M.jpg", caption="사과형 코디 예시", use_container_width=True)
+elif choice == "배형 🍐 (하체가 발달한 체형)":
+    st.image("https://i.imgur.com/sbVVQox.jpg", caption="배형 코디 예시", use_container_width=True)
+elif choice == "직사각형 ▭ (허리라인이 잘 안 보이는 체형)":
+    st.image("https://i.imgur.com/EDuOy1c.jpg", caption="직사각형 코디 예시", use_container_width=True)
+elif choice == "모래시계형 ⏳ (균형잡힌 체형)":
+    st.image("https://i.imgur.com/CSv0Wdo.jpg", caption="모래시계형 코디 예시", use_container_width=True)
+elif choice == "역삼각형 🔻 (어깨가 넓은 체형)":
+    st.image("https://i.imgur.com/qwB8Zm6.jpg", caption="역삼각형 코디 예시", use_container_width=True)
 
-if st.button(f"{body_shape} 오늘의 코디 보기 🎲"):
-    outfit = random.choice(recommendations[body_shape]["items"])
-    st.success(f"오늘의 추천 코디: **{outfit['name']}**")
-    st.image(outfit["image"], caption="세련된 코디 예시", use_column_width=True)
+st.success("체형에 맞는 코디로 자신감을 표현해보세요! ✨")
